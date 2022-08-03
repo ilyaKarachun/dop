@@ -25,7 +25,11 @@ function App() {
         setGet([])
     }
     useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/albums')
+            .then(response => response.json())
+            .then(json => setGet(json))
     }, [])
+
     return (
         <div className="App">
             <Button nickName={"CleanPage"} callBack={GetRequestHandler}></Button>
